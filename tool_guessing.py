@@ -10,6 +10,7 @@ def run():
     while attempt > 0:
 
         guess = int(input(f"Guess the secret number between {lower_number} and {higher_number} : "))
+
         if lower_number > guess > higher_number:
             print("Wrong entry, try again")
         if guess > secret_num:
@@ -28,3 +29,6 @@ def run():
         print("you loose")
 
 run()
+
+if __name__ == "__main__":
+    run()
