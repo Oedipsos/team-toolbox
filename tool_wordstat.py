@@ -1,36 +1,44 @@
 from collections import Counter
 
-VOWELS = "AEIOU"
+VOWELS = "aeiou"
 
-def count_words(string):
-    return len(string.split())
+def count_words(text):
+    return len(text.split())
 
 
-def longest_word(string):
-    lengths = map(len, string.split())
+def longest_word(text):
+    lengths = map(len, text.split())
     return max(lengths)
 
 
-def count_vowels(string):
-    vowels = filter(lambda x: x.upper() in VOWELS, string)
+def count_vowels(text):
+    vowels = [c for c in text if c.lower() in VOWELS]
     return len(vowels)
 
 
 def word_frequency(text):
-    words = text.split()
+    words = text.lower().split()
     freqs = Counter(words)
     return freqs
 
 
 def most_frequent_word(text):
     freqs = word_frequency(text)
-    return freqs.most_common(1)[0]
+    try:
+        return freqs.most_common()[0]
+    except:
+        return None
 
 
 def run():
-    pass
-
-
+    user_input = input("Type a sentence: ")
+    print(f"Number of words: {count_words(user_input)}")     
+    print(f"Longest word: {longest_word(user_input)}")     
+    print(f"Number of vowels: {count_vowels(user_input)}")     
+    
+    w, count = most_frequent_word(user_input)
+    print(f"Most frequent word: {w} ({count} times)")     
+    
 
 if __name__ == "__main__":
     run()
