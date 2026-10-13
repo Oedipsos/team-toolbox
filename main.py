@@ -1,5 +1,5 @@
 import tool_wordstat as ws
-
+import tool_guessing
 
 def show_menu():
     """Display the list of available tools."""
@@ -7,7 +7,7 @@ def show_menu():
     print("=== Team Toolbox ===")
     print("0. Quit")
     print("1. Word statistics tool")
-
+    print("2.Guessing game")
 
 def main():
     print('Welcome to the Team Toolbox! Choose a tool in the menu.')
@@ -25,8 +25,11 @@ def main():
                 print("Running Word stats tool...")
                 print()
                 ws.run()
+            case "2":
+                tool_guessing.run()
             case _:
                 print("Invalid choice, try again.")
+
 
 
 if __name__ == "__main__":
