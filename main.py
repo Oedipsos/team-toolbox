@@ -1,9 +1,12 @@
+import random
+
+
 def show_menu():
     """Display the list of available tools."""
     print()
     print("=== Team Toolbox ===")
     print("0. Quit")
-
+    print("2. Number guessing game")
 
 def main():
     print('Welcome to the Team Toolbox! Choose a tool in the menu.')
@@ -16,6 +19,9 @@ def main():
             break
         else:
             print("Invalid choice, try again.")
+        """if choice == "2":
+            guessing_game()"""
+
 
 
 main()
