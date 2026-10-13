@@ -13,9 +13,8 @@ def run():
     while attempts > 0:
         try:
             guess = int(input(
-                f"Guess the secret number between
-                {lower_number} and {higher_number} : "
-            ))
+                f"Guess the secret number between"
+                f"{lower_number} and {higher_number} : "))
         except ValueError:
             print("Please enter a valid number.")
             continue
