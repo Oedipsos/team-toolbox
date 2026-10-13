@@ -20,20 +20,27 @@ def run():
             print("Please enter a valid number.")
             continue
         
-        if lower_number > guess or guess > higher_number:
+        if lower_number >= guess or guess >= higher_number:
             print("Wrong entry, try again")
             continue
         
         if guess > secret_num:
+
             print("The secret number is lower than " + str(guess))
             higher_number = guess
             attempts -= 1
+            print(f"attempts left : {attempts}")
+
         elif guess < secret_num:
+
             print("The secret number is higher than " + str(guess))
             lower_number = guess
             attempts -= 1
+            print(f"attempts left : {attempts}")
+
         else:
-            print("Congratulations, you won the game !")
+            print(f"Congratulations, you won the game !"
+                  f"attempts left : {attempts}")
             break
     else: 
         print("You loose")
