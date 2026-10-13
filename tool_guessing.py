@@ -2,8 +2,9 @@ import random
 
 
 def run():
+
+    attempts = 10
     lower_number, higher_number = 0, 100
-    attempts = 10 
     secret_num = random.randint(0, 100)
     
     print("====================\n"
@@ -13,11 +14,12 @@ def run():
     while attempts > 0:
         try:
             guess = int(input(
-                f"Guess the secret number between"
+                f"Guess the secret number between "
                 f"{lower_number} and {higher_number} : "))
         except ValueError:
             print("Please enter a valid number.")
             continue
+        
         if lower_number > guess or guess > higher_number:
             print("Wrong entry, try again")
             continue

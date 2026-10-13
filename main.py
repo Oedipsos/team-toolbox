@@ -7,16 +7,17 @@ def show_menu():
     print("=== Team Toolbox ===")
     print("0. Quit")
     print("1. Word statistics tool")
-    print("2.Guessing game")
+    print("2. Guessing game")
 
 def main():
     print('Welcome to the Team Toolbox! Choose a tool in the menu.')
-    # Ask the user for a choice until they decide to quit.
     
+    # Ask the user for a choice until they decide to quit.
     while True:
         show_menu()
         choice = input("Your choice: ")
         choice = choice.strip()
+        
         match choice:
             case "0":
                 print("Goodbye!")
